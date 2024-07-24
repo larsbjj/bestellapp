@@ -138,5 +138,15 @@ function checkout() {
     basket.amount = [];
     basket.totalAmount = [];
 
-    render();
+    updateAllBaskets();
+    orderConfirmation();
+}
+
+function orderConfirmation() {
+    let confirmationMessageRef = document.getElementById('shopping-basket-content');
+    let mobileConfirmationMessageRef = document.getElementById('shopping-basket-mobile');
+    confirmationMessageRef.innerHTML = '';
+    confirmationMessageRef.innerHTML = getOrderConfirmationTemplate();
+    mobileConfirmationMessageRef.innerHTML = '';
+    mobileConfirmationMessageRef.innerHTML = getOrderConfirmationTemplate();
 }

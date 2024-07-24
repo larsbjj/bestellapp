@@ -8,7 +8,6 @@ function getMenuCategoryTemplate(index) {
             </div>`
 }
 
-
 function getMenuItemTemplate(previousIndex, index) {
     return `<div class="menu-item">
                         <div class="item-details">
@@ -57,7 +56,6 @@ function getBasketContent(index) {
                     </div>`
 }
 
-
 function getEmptyBasketTemplate() {
     return `<h2 class="cart-title">Warenkorb</h2>
                     
@@ -85,7 +83,6 @@ function getEmptyBasketTemplate() {
                     <button class="cart-order-button" disabled>Bestellen</button>`
 }
 
-
 function getMobileBasketTemplate() {
     return `<div class="button-container-top">
                 <button class="checkout-button" onclick="toggleOverlay();">Warenkorb</button>
@@ -108,7 +105,6 @@ function getMobileBasketTemplate() {
                     </div>
                     <button class="checkout-button" onclick="checkout();">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>`
 }
-
 
 function getEmptyMobileBasketTemplate() {
     return `<div class="button-container-top">
@@ -175,7 +171,6 @@ function getBasketContent(index) {
           </div>`;
 }
 
-
 function getMobileBasketContent(index) {
   return `<div class="cart-item">
               <div class="cart-item-details">
@@ -189,4 +184,16 @@ function getMobileBasketContent(index) {
                   <button class="increase" onclick="changeCartAmount(${index}, ${basket.price[index]}, 1)">+</button>
               </div>
           </div>`;
+}
+
+function getOrderConfirmationTemplate() {
+  return `<div class="order-confirmation">
+  <h2>Bestellung erfolgreich!</h2>
+  <p>Ihre Bestellung wurde aufgegeben und wird in Kürze zubereitet.</p>
+  <div class="order-details">
+    <p><strong>Bestellnummer:</strong> #12345</p>
+    <p><strong>Geschätzte Lieferzeit:</strong> 30-45 Minuten</p>
+  </div>
+  <button class="track-order-btn">Bestellung verfolgen</button>
+</div>`
 }
