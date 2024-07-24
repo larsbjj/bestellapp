@@ -20,24 +20,6 @@ function getMenuItemTemplate(previousIndex, index) {
                     </div>`
 }
 
-
-function getCartSummaryTemplate() {
-    return `<div class="subtotal">
-                        <span>Zwischensumme</span>
-                        <span>${formatPrice(basket.totalAmount)} €</span>
-                    </div>
-                    <div class="delivery-cost">
-                        <span>Lieferkosten</span>
-                        <span>2,00 €</span>
-                    </div>
-                    <div class="total">
-                        <span>Gesamt</span>
-                        <span>${formatPrice(basket.totalAmount + 2)} €</span>
-                    </div>
-                    <button class="checkout-button">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>`
-}
-
-
 function getBasketTemplate() {
     return ` <h2>Warenkorb</h2>
                 <div id="cart-content">
@@ -104,25 +86,9 @@ function getEmptyBasketTemplate() {
 }
 
 
-function getMobileBasketContent(index) {
-    return `<div class="cart-item">
-                        <div class="cart-item-details">
-                            <span class="quantity">${basket.amount[index]}x</span>
-                            <span class="item-name">${basket.food[index]}</span>
-                            <span class="item-price">${formatPrice(basket.price[index])} €</span>
-                        </div>
-                        <div class="quantity-controls">
-                            <button class="decrease" onclick="changeMobileCartAmount(${index}, ${basket.price[index]}, -1)">−</button>
-                            <span class="quantity">${basket.amount[index]}</span>
-                            <button class="increase" onclick="changeMobileCartAmount(${index}, ${basket.price[index]}, 1)">+</button>
-                        </div>
-                    </div>`
-}
-
-
 function getMobileBasketTemplate() {
     return `<div class="button-container-top">
-                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb (Gesamt €)</button>
+                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb</button>
               </div>
               <h2>Warenkorb</h2>
                 <div id="mobile-cart-content">
@@ -146,7 +112,7 @@ function getMobileBasketTemplate() {
 
 function getEmptyMobileBasketTemplate() {
     return `<div class="button-container-top">
-                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb (Gesamt €)</button>
+                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb</button>
               </div>
             <h2 class="cart-title">Warenkorb</h2>
                     
@@ -172,4 +138,55 @@ function getEmptyMobileBasketTemplate() {
                     <p class="cart-minimum-order">Leider kannst du noch nicht bestellen.</p>
                     
                     <button class="cart-order-button" disabled>Bestellen</button>`
+}
+
+function getBasketTemplate() {
+  return `<h2>Warenkorb</h2>
+          <div id="cart-content"></div>
+          <div class="cart-summary" id="cart-summary-content">
+              <div class="subtotal">
+                  <span>Zwischensumme</span>
+                  <span>${formatPrice(basket.totalAmount)} €</span>
+              </div>
+              <div class="delivery-cost">
+                  <span>Lieferkosten</span>
+                  <span>2,00 €</span>
+              </div>
+              <div class="total">
+                  <span>Gesamt</span>
+                  <span>${formatPrice(basket.totalAmount + 2)} €</span>
+              </div>
+              <button class="checkout-button">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>
+          </div>`;
+}
+
+function getBasketContent(index) {
+  return `<div class="cart-item">
+              <div class="cart-item-details">
+                  <span class="quantity">${basket.amount[index]}x</span>
+                  <span class="item-name">${basket.food[index]}</span>
+                  <span class="item-price">${formatPrice(basket.price[index])} €</span>
+              </div>
+              <div class="quantity-controls">
+                  <button class="decrease" onclick="changeCartAmount(${index}, ${basket.price[index]}, -1)">−</button>
+                  <span class="quantity">${basket.amount[index]}</span>
+                  <button class="increase" onclick="changeCartAmount(${index}, ${basket.price[index]}, 1)">+</button>
+              </div>
+          </div>`;
+}
+
+
+function getMobileBasketContent(index) {
+  return `<div class="cart-item">
+              <div class="cart-item-details">
+                  <span class="quantity">${basket.amount[index]}x</span>
+                  <span class="item-name">${basket.food[index]}</span>
+                  <span class="item-price">${formatPrice(basket.price[index])} €</span>
+              </div>
+              <div class="quantity-controls">
+                  <button class="decrease" onclick="changeCartAmount(${index}, ${basket.price[index]}, -1)">−</button>
+                  <span class="quantity">${basket.amount[index]}</span>
+                  <button class="increase" onclick="changeCartAmount(${index}, ${basket.price[index]}, 1)">+</button>
+              </div>
+          </div>`;
 }
