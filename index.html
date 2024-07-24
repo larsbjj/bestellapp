@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestell App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./assets/icons/favicon-32x32.png">
+    <script src="./scripts/database.js"></script>
+    <script src="./scripts/templates.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body onload="render()">
+    <div class="d-none" id="overlay">
+        <div id="shopping-basket-mobile">
+        </div>
+    </div>
+    <header>
+        <a href="#"><img src="./assets/img/Logo.png" alt="Site Logo"></a>
+        <img src="./assets/icons/menu.png" alt="Menu Icon" id="menu-icon">
+    </header>
+    <div id="content-wrapper">
+        <div id="content">
+            <div class="banner">
+                <img src="./assets/img/banner-image.avif" alt="Banner Image">
+            </div>
+            <div class="restaurant-info">
+                <h1>Pizza Palace</h1>
+                <div class="rating">Bewertung (4.2 von 5 Sternen)</div>
+                <nav class="menu-nav">
+                    <button class="active"><a href="#pizza-category">Pizza</a></button>
+                    <button><a href="#pasta-category">Pasta</a></button>
+                    <button><a href="#salad-category">Salate</a></button>
+                </nav>
+            </div>
+            <div class="container">
+                <div id="menu-content">
+                </div>
+                <div class="button-container">
+                  <button class="checkout-button" onclick="toggleOverlay(), renderMobileBasket()">Warenkorb (Gesamt €)</button>
+                </div>
+              </div>
+        </div>
+        <div id="shopping-basket">
+            <div class="shopping-basket-content" id="shopping-basket-content">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
