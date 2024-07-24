@@ -131,3 +131,12 @@ function updateMobileBasketButton() {
         mobileBasketButton.innerHTML = `Warenkorb (${formatPrice(basket.totalAmount + 2)} €)`;
     }
 }
+
+function checkout() {
+    basket.food = [];
+    basket.price = [];
+    basket.amount = [];
+    basket.totalAmount = [];
+
+    render();
+}

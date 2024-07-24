@@ -37,7 +37,7 @@ function getBasketTemplate() {
                         <span>Gesamt</span>
                         <span>${basket.totalAmount + 2} €</span>
                     </div>
-                    <button class="checkout-button">Bezahlen (${basket.totalAmount + 2} €)</button>
+                    <button class="checkout-button" onclick="checkout();">Bezahlen (${basket.totalAmount + 2} €)</button>
                 </div>`
 }
 
@@ -88,7 +88,7 @@ function getEmptyBasketTemplate() {
 
 function getMobileBasketTemplate() {
     return `<div class="button-container-top">
-                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb</button>
+                <button class="checkout-button" onclick="toggleOverlay();">Warenkorb</button>
               </div>
               <h2>Warenkorb</h2>
                 <div id="mobile-cart-content">
@@ -106,13 +106,13 @@ function getMobileBasketTemplate() {
                         <span>Gesamt</span>
                         <span>${formatPrice(basket.totalAmount + 2)} €</span>
                     </div>
-                    <button class="checkout-button">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>`
+                    <button class="checkout-button" onclick="checkout();">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>`
 }
 
 
 function getEmptyMobileBasketTemplate() {
     return `<div class="button-container-top">
-                <button class="checkout-button" onclick="toggleOverlay()">Warenkorb</button>
+                <button class="checkout-button" onclick="toggleOverlay();">Warenkorb</button>
               </div>
             <h2 class="cart-title">Warenkorb</h2>
                     
@@ -156,7 +156,7 @@ function getBasketTemplate() {
                   <span>Gesamt</span>
                   <span>${formatPrice(basket.totalAmount + 2)} €</span>
               </div>
-              <button class="checkout-button">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>
+              <button class="checkout-button" onclick="checkout();">Bezahlen (${formatPrice(basket.totalAmount + 2)} €)</button>
           </div>`;
 }
 

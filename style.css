@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: JETSansDigital,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;;
   background-color: #FFFFFF;
 }
 
@@ -94,8 +94,7 @@ header img {
   margin-bottom: 20px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .cart-item-details {
@@ -261,6 +260,10 @@ header img {
 
 .checkout-button:hover {
   background-color: #e55c00;
+}
+
+#cart-content {
+  width: 100%;
 }
 
 .banner img {
@@ -446,10 +449,24 @@ header img {
   #content-wrapper {
       flex-direction: column;
   }
+  footer {
+    margin-top: 48px;
+  }
 }
 
 @media screen and (min-width: 1025px){
   #overlay {
       display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .banner img {
+    height: 200px;
+  }
+  .add-to-cart {
+    height: 30px;
+    width: 30px;
+    font-size: 1.2em;
   }
 }
