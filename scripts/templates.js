@@ -194,6 +194,6 @@ function getOrderConfirmationTemplate() {
     <p><strong>Bestellnummer:</strong> #12345</p>
     <p><strong>Geschätzte Lieferzeit:</strong> 30-45 Minuten</p>
   </div>
-  <button class="track-order-btn">Bestellung verfolgen</button>
+  <button class="track-order-btn" onclick="render();">Zurück zur Startseite</button>
 </div>`
 }
